@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Create Progress Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/dleclogo.jpg">
+</head>
+<body data-page="progress">
+  <header class="site-header glass">
+    <div class="brand">
+      <img src="assets/dleclogo.jpg" alt="DL+EC Builders Corporation" class="logo" />
+      <div class="titles">
+        <h1>Create Progress Report</h1>
+        <p class="subtitle">DL + EC Builders Corporation</p>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <h2>Choose Project</h2>
+      <div class="grid-form">
+        <label>
+          <span>Project</span>
+          <select id="progressProjectSelect"></select>
+        </label>
+        <label>
+          <span>Report Date</span>
+          <input type="date" id="reportDate" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card glass">
+      <div class="card-header-row">
+        <h2>Progress Entries</h2>
+        <div class="row-actions">
+          <button id="addProgRowBtn" class="btn">+ Add Row</button>
+          <button id="clearProgRowsBtn" class="btn btn-ghost">Clear All</button>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table excel" id="progressTable">
+          <thead>
+            <tr>
+              <th style="width:30%">Description</th>
+              <th style="width:12%">BOQ Qty</th>
+              <th style="width:12%">Unit</th>
+              <th style="width:12%">Progress Qty</th>
+              <th style="width:14%">% of Completion</th>
+              <th style="width:14%">Remarks</th>
+              <th style="width:6%"></th>
+            </tr>
+          </thead>
+          <tbody id="progressTbody"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="right"><strong>Totals</strong></td>
+              <td id="totalProgressQty">0</td>
+              <td id="overallProgressPct">0%</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveProgressBtn" class="btn">Save Report</button>
+        <button id="printPdfBtn" class="btn btn-primary">Download PDF</button>
+      </div>
+      <p class="hint">“Download PDF” uses your browser’s Print to PDF.</p>
+    </section>
+
+    <!-- Printable area -->
+    <section id="printArea" class="print-area" aria-hidden="true">
+      <div class="print-header">
+        <img src="assets/dleclogo.jpg" alt="DL+EC Builders Corporation" class="logo print-logo" />
+        <div>
+          <h1>Progress Report</h1>
+          <p class="subtitle">DL + EC Builders Corporation</p>
+        </div>
+      </div>
+      <div class="print-meta">
+        <div><strong>Project:</strong> <span id="printProjectName"></span></div>
+        <div><strong>Location:</strong> <span id="printProjectLocation"></span></div>
+        <div><strong>Owner:</strong> <span id="printProjectOwner"></span></div>
+        <div><strong>Date:</strong> <span id="printReportDate"></span></div>
+      </div>
+      <table class="data-table excel">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>BOQ Qty</th>
+            <th>Unit</th>
+            <th>Progress Qty</th>
+            <th>% of Completion</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody id="printTbody"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="right"><strong>Totals</strong></td>
+            <td id="printTotalProgressQty">0</td>
+            <td id="printOverallProgressPct">0%</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer glass">
+    <small>© <span id="year"></span> DL + EC Builders Corporation</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

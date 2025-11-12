@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Create Project BOQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/dleclogo.jpg">
+</head>
+<body data-page="create-boq">
+  <header class="site-header glass">
+    <div class="brand">
+      <img src="assets/dleclogo.jpg" alt="DL+EC Builders Corporation" class="logo" />
+      <div class="titles">
+        <h1>Create Project BOQ</h1>
+        <p class="subtitle">DL + EC Builders Corporation</p>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <h2>Project Details</h2>
+      <form id="projectForm" class="grid-form">
+        <label>
+          <span>Project Name <span class="req">*</span></span>
+          <input type="text" id="projectName" required />
+        </label>
+        <label>
+          <span>Location</span>
+          <input type="text" id="projectLocation" />
+        </label>
+        <label>
+          <span>Owner</span>
+          <input type="text" id="projectOwner" />
+        </label>
+      </form>
+    </section>
+
+    <section class="card glass">
+      <div class="card-header-row">
+        <h2>BOQ Items</h2>
+        <div class="row-actions">
+          <button id="addRowBtn" class="btn">+ Add Row</button>
+          <button id="clearRowsBtn" class="btn btn-ghost">Clear All</button>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table excel" id="boqTable">
+          <thead>
+            <tr>
+              <th style="width:45%">Description</th>
+              <th style="width:15%">Qty</th>
+              <th style="width:15%">Unit</th>
+              <th style="width:10%"></th>
+            </tr>
+          </thead>
+          <tbody id="boqTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveProjectBtn" class="btn btn-primary">Save Project</button>
+      </div>
+      <p class="hint">Saved projects appear in “List of Projects BOQ.”</p>
+    </section>
+  </main>
+
+  <footer class="site-footer glass">
+    <small>© <span id="year"></span> DL + EC Builders Corporation</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

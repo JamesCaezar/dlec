@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>List of Projects BOQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/dleclogo.jpg">
+</head>
+<body data-page="list-boq">
+  <header class="site-header glass">
+    <div class="brand">
+      <img src="assets/dleclogo.jpg" alt="DL+EC Builders Corporation" class="logo" />
+      <div class="titles">
+        <h1>List of Projects BOQ</h1>
+        <p class="subtitle">DL + EC Builders Corporation</p>
+      </div>
+    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <div class="card-header-row">
+        <h2>Projects</h2>
+        <a href="create-boq.html" class="btn">+ New Project</a>
+      </div>
+
+      <div id="emptyState" class="empty-state" hidden>
+        No projects yet. Create your first BOQ from the “Create Project BOQ” page.
+      </div>
+
+      <div class="table-scroll" id="projectsWrap">
+        <table class="data-table excel" id="projectsTable">
+          <thead>
+            <tr>
+              <th style="width:35%">Project Name</th>
+              <th style="width:25%">Location</th>
+              <th style="width:25%">Owner</th>
+              <th style="width:15%">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projectsTbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card glass" id="boqDetailCard" hidden>
+      <div class="card-header-row">
+        <h2 id="detailTitle">BOQ Details</h2>
+        <button id="closeDetail" class="btn btn-ghost">Close</button>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table excel" id="boqDetailTable">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Qty</th>
+              <th>Unit</th>
+            </tr>
+          </thead>
+          <tbody id="boqDetailBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer glass">
+    <small>© <span id="year"></span> DL + EC Builders Corporation</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

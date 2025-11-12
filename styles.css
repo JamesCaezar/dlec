@@ -1,0 +1,174 @@
+:root{
+  --bg:#0b1020;
+  --card:rgba(23,27,32,0.78);
+  --muted:#a6b0be;
+  --text:#eef3f9;
+  --accent:#6bb3ff;
+  --accent-2:#3c82ff;
+  --border:#2a3140;
+  --ok:#1fbf75;
+  --danger:#ff6b6b;
+  --ring: rgba(107,179,255,0.35);
+
+  /* Excel-like palette */
+  --xl-grid:#cfd8e3;
+  --xl-grid-dark:#b8c3cf;
+  --xl-header:#e1f0d5;
+  --xl-header-text:#145a32;
+  --xl-row-alt:#f8fbff;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0; padding:0;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #1a2340 0%, transparent 60%),
+    radial-gradient(1200px 800px at 120% 20%, #0f2a40 0%, transparent 50%),
+    url('assets/background.png') center / cover no-repeat,
+    var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  min-height:100vh;
+}
+
+.site-header, .site-footer{
+  padding:16px 20px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.site-footer{ border-top:1px solid var(--border); border-bottom:none; }
+
+.container{ max-width:1100px; margin:24px auto; padding:0 16px; }
+
+h1{ margin:0 0 4px; font-size:24px; letter-spacing:.2px;}
+h2{ margin:0 0 12px; font-size:18px; letter-spacing:.2px;}
+
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ height:44px; width:auto; border-radius:10px; background:rgba(255,255,255,0.06); padding:6px; }
+.print-logo{ background:none; padding:0; height:48px; }
+
+.subtitle{ margin:0; color:var(--muted); font-size:12px; }
+
+.back-link{
+  color:var(--muted); text-decoration:none; font-size:14px; position:absolute; right:20px; top:20px;
+}
+.back-link:hover{ color:var(--text); }
+
+.tab-grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top:16px;
+}
+.tab-card{
+  display:block; background:var(--card); border:1px solid var(--border);
+  padding:18px; border-radius:16px; text-decoration:none; color:var(--text);
+  transition: transform .12s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.lift:hover{ transform: translateY(-3px); border-color:var(--accent);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.card{
+  background:var(--card); border:1px solid var(--border);
+  padding:16px; border-radius:16px; margin-bottom:16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.glass{ backdrop-filter: blur(8px); }
+
+.card-header-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px;
+}
+
+.grid-form{
+  display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+label span{ display:block; margin-bottom:6px; color:var(--muted); font-size:13px; }
+input, select{
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--border);
+  background:#0e1424; color:var(--text); outline:none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, select:focus{ border-color:var(--accent); box-shadow:0 0 0 4px var(--ring); }
+
+.btn{
+  border:1px solid var(--border); background:#11192d; color:var(--text);
+  padding:10px 14px; border-radius:12px; cursor:pointer;
+  transition: transform .08s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.btn:hover{ border-color:var(--accent); transform: translateY(-1px); box-shadow:0 4px 16px rgba(60,130,255,0.25); }
+.btn-primary{ background:linear-gradient(180deg, var(--accent), var(--accent-2)); border-color:transparent; color:#08111f; font-weight:600; }
+.btn-ghost{ background:transparent; }
+
+.row-actions{ display:flex; gap:8px; }
+
+.table-scroll{ overflow:auto; border:1px solid var(--xl-grid); border-radius:10px; background:#fff; }
+
+/* Excel-like table */
+.data-table.excel{
+  width:100%; border-collapse: collapse; min-width:780px; color:#111;
+  background:#fff;
+}
+.data-table.excel th, .data-table.excel td{
+  padding:10px 10px; border:1px solid var(--xl-grid);
+}
+.data-table.excel thead th{
+  background: var(--xl-header);
+  color: var(--xl-header-text);
+  font-weight:700;
+  text-transform: none;
+  position:sticky; top:0; z-index:1;
+  border-bottom:2px solid var(--xl-grid-dark);
+}
+.data-table.excel tbody tr:nth-child(even) td{ background: var(--xl-row-alt); }
+.data-table.excel tbody tr:hover td{ outline:2px solid var(--accent-2); outline-offset:-2px; background:#f0f7ff; }
+.data-table.excel tfoot td{
+  background:#f2f6f9; font-weight:700;
+}
+
+.table-input{
+  width:100%; padding:8px 8px; border-radius:4px; border:1px solid #d1d9e6;
+  background:#fff; color:#111;
+}
+.table-input:focus{ border-color:#66a3ff; box-shadow:0 0 0 3px rgba(102,163,255,.25); }
+
+.icon-btn{
+  border:1px solid #d1d9e6; background:#f8fafc; color:#123; 
+  padding:6px 10px; border-radius:6px; cursor:pointer; font-size:12px;
+  transition: border-color .15s ease, transform .08s ease, background .15s ease;
+}
+.icon-btn:hover{ color:#000; border-color:#66a3ff; background:#eef6ff; transform: translateY(-1px); }
+
+.form-actions{ margin-top:12px; display:flex; gap:10px; }
+.hint{ color:var(--muted); font-size:12px; margin-top:8px; }
+
+.req{ color:var(--danger); }
+
+.empty-state{
+  color:var(--muted); padding:18px; border:1px dashed var(--border);
+  border-radius:12px; text-align:center;
+}
+
+.right{ text-align:right; }
+
+.badge{
+  display:inline-block; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:600;
+  border:1px solid #d1d9e6;
+}
+.badge.ok{ background: #e9f7ef; color:#1e7e34; border-color:#c9e7d4; }
+.badge.warn{ background: #fff3cd; color:#856404; border-color:#ffe49a; }
+
+/* Print styles */
+@media print{
+  body{ background:#fff !important; color:#000; }
+  header, footer, .form-actions, .card-header-row, .back-link { display:none !important; }
+  .card, .table-scroll{ border:none; box-shadow:none; }
+  .data-table{ min-width: auto; width:100%; }
+  .print-area{ display:block !important; }
+}
+
+/* Hidden print area by default */
+.print-area{ display:none; margin-top:16px; }
+.print-meta{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin:12px 0; }
+.print-header{ display:flex; align-items:center; gap:12px; margin-bottom:8px; }
