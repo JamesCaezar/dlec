@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DL + EC — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <img src="logo.png" alt="DL + EC" />
+      </div>
+      <nav class="sidebar__nav">
+        <a class="active"><span>🏠</span> Home</a>
+        <a><span>🕒</span> Attendance</a>
+        <a><span>🛫</span> Leave Tracker</a>
+        <a><span>🏆</span> Performance</a>
+        <a><span>📦</span> Onboarding</a>
+        <a><span>🚪</span> Offboarding</a>
+        <a><span>⋯</span> More</a>
+        <a class="push"><span>📊</span> Reports</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar__tabs">
+          <button class="tab active">My Space</button>
+          <button class="tab">Organization</button>
+          <button class="tab">Dashboard</button>
+          <button class="tab">Calendar</button>
+        </div>
+        <div class="topbar__right">
+          <button class="icon">🔔</button>
+          <button class="icon">❔</button>
+          <div class="avatar">JC</div>
+        </div>
+      </header>
+
+      <!-- Banner -->
+      <section class="banner">
+        <div class="banner__img"></div>
+      </section>
+
+      <!-- Content grid -->
+      <section class="grid">
+        <!-- Profile / time card -->
+        <article class="card profile">
+          <div class="profile__row">
+            <div class="avatar big">JL</div>
+            <div>
+              <div class="empid">B1866 · <strong>James Caezar Lalu</strong></div>
+              <div class="role">IT Support Coordinator</div>
+              <div class="status"><span id="attStatus" class="pill">Out</span></div>
+            </div>
+          </div>
+
+          <div class="profile__timer">
+            <div class="timer__box"><span id="h">00</span><small>Hrs</small></div>
+            <div class="timer__box"><span id="m">00</span><small>Mins</small></div>
+            <div class="timer__box"><span id="s">00</span><small>Secs</small></div>
+          </div>
+
+          <div class="profile__actions">
+            <button id="checkIn" class="btn primary">Check-in</button>
+            <button id="checkOut" class="btn danger" disabled>Check-out</button>
+            <button id="breakBtn" class="btn ghost">⏲ Break</button>
+          </div>
+
+          <div class="reporting">
+            <img src="logo.png" alt="mgr" class="mgr-photo" />
+            <div>
+              <div class="label">Reporting to</div>
+              <div class="mgr">B2018 · Genevieve Muñoz</div>
+              <div class="meta">Shift: PH 9 - 6</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tabs + feed card -->
+        <article class="card tabs">
+          <nav class="tabbar">
+            <button class="chip active">Activities</button>
+            <button class="chip">Feeds</button>
+            <button class="chip">Profile</button>
+            <button class="chip">Approvals</button>
+            <button class="chip">Leave</button>
+            <button class="chip">Attendance</button>
+            <button class="chip">Time Logs</button>
+            <button class="chip">Timesheets</button>
+            <button class="chip more">⋯</button>
+          </nav>
+          <div class="feed">
+            <div class="greeting">
+              <div class="greeting__logo">🌅</div>
+              <div>
+                <div class="title">Good Morning, <strong>James</strong></div>
+                <div class="text">Have a productive day!</div>
+              </div>
+            </div>
+
+            <div class="schedule card-mini">
+              <div class="title">Work Schedule</div>
+              <div class="week">
+                <div class="day weak">Sun<br><small>Weekend</small></div>
+                <div class="day">Mon<br><small>Present</small></div>
+                <div class="day">Tue<br><small>Present</small></div>
+                <div class="day active">Wed<br><small>Today</small></div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day weak">Sat<br><small>Weekend</small></div>
+              </div>
+              <div class="shift">PH 9 - 6 DS · 9:00 – 18:00</div>
+            </div>
+
+            <div class="holidays card-mini">
+              <div class="title">Upcoming Holidays</div>
+              <ul>
+                <li>Nov 30 — Bonifacio Day</li>
+                <li>Dec 25 — Christmas Day</li>
+                <li>Dec 30 — Rizal Day</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
