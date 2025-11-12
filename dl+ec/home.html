@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DL + EC — Time Tracking</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="viewport">
+    <header class="appbar">
+      <div class="brand">
+        <img src="logo.png" alt="DL + EC" class="brand__logo">
+        <div class="brand__text">
+          <h1>DL + EC Builders</h1>
+          <p class="subtitle">Time Tracker</p>
+        </div>
+      </div>
+      <nav class="actions">
+        <button id="exportBtn" class="btn ghost">Export CSV</button>
+        <button id="logoutBtn" class="btn danger">Log out</button>
+      </nav>
+    </header>
+
+    <section class="glass board">
+      <div class="clock">
+        <div id="dateStr" class="date"></div>
+        <div id="timeStr" class="time"></div>
+        <div id="status" class="status">Status: <span>Not timed in</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="timeInBtn" class="btn primary">Time In</button>
+        <button id="timeOutBtn" class="btn secondary" disabled>Time Out</button>
+      </div>
+    </section>
+
+    <section class="glass history">
+      <h2>Today</h2>
+      <ul class="today" id="todayList"></ul>
+
+      <h2>History</h2>
+      <div class="table-wrap">
+        <table class="table" id="historyTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time In</th>
+              <th>Time Out</th>
+              <th>Total (hh:mm)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">© <span id="year"></span> DL + EC Builders Corporation</footer>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>
